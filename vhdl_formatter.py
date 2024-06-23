@@ -3,7 +3,7 @@ import re
 def format_vhdl(code):
     keywords = ['entity', 'architecture', 'begin', 'end', 'process', 'is', 'signal']
     keyword_pattern = re.compile(r'\b(' + '|'.join(keywords) + r')\b', re.IGNORECASE)
-    
+
     def keyword_replacer(match):
         return match.group(1).upper()
 
@@ -19,9 +19,9 @@ def main():
     filename = sys.argv[1]
     with open(filename, 'r') as file:
         code = file.read()
-    
+
     formatted_code = format_vhdl(code)
-    
+
     with open(filename, 'w') as file:
         file.write(formatted_code)
 
