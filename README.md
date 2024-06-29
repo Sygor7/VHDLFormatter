@@ -1,3 +1,3 @@
 # VHDLFormatter
  
-Simplified [g2384/VHDLFormatter](https://github.com/g2384/VHDLFormatter).
+Packetized [vsg](https://pypi.org/project/vsg/).
