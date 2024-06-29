@@ -1,21 +1,6 @@
-# ~/VHDLFormatter/vsg_runner.py
-
-import vsg
-
-import subprocess
-import os
+import re
 import sys
-
-def main():
-    # Ottieni il percorso assoluto del comando `vsg`
-    vsg_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '.venv', 'bin', 'vsg'))
-    
-    # Cattura gli argomenti passati a vsg_runner.py e passali a vsg
-    args = sys.argv[1:]  # Ignora il primo argomento che è il nome dello script
-    
-    # Esegui il comando `vsg` con gli argomenti
-    subprocess.run([vsg_path] + args)
-
-if __name__ == "__main__":
-    main()
-
+from vsg.__main__ import main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())
